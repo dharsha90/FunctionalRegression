@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Order SellerOrganizationCode="9065" OrderDate="2013-11-18T01:01:00.140-05:00" EnterpriseCode="HDUS" DocumentType="1">
+    <Instructions>
+        <Instruction InstructionType="CustRef" InstructionText="ONLINE PICKUP"></Instruction>
+    </Instructions>
+    <Extn ExtnUCMID="" ExtnIsMultiStoreOrder="N" ExtnHostOrderSystemIdentifier="" ExtnHostOrderReference="" ExtnDerivedTransactionType="ORDER_CREATE" ExtnHostSrcProcess="9" ExtnLegacyHostSrcProcess="" ExtnClientExternalSrcProcess="" ExtnClientExternalOrderReference="" ExtnCreateUserID="ONLINE" ExtnHostUserID="ONLINE" ExtnModifiedUserID="ONLINE" ExtnCustGoldenRecID="0202E824ABE4C41AAT" ExtnUCMType="C">
+        <HDWillCallList>
+            <HDWillCall CreateSrcProcess="9" ModifySrcProcess="9" CreateSrcReference="-1" ModifySrcReference="-1" SKUCode="515664" StatusCd="402" StatusDescription="Scheduled" CreateTimeStamp="2013-11-18T01:01:00.140-05:00" StatusEffectiveTs="2013-11-18T01:01:00.140-05:00" OrderCreateLocation="6905" WillCallLineNum="5001" ScheduledPickUpTs="2013-11-18T01:01:00-05:00" WillCallType="C" Tax="" SellingLocation="9735" ShipNode="9735" ContactName="Annal Robijnson" AltContactName=" ">
+                <HDWCLineStatusList>
+                    <HDWCLineStatus UserAuditID="SYSCOM" StatusEffectiveTs="2013-11-18T01:04:25-05:00" StoreNumber="9735" SVSTypeCode="W" StatusCode="100" StatusDescription="Quote"></HDWCLineStatus>
+                    <HDWCLineStatus UserAuditID="SYSCOM" StatusEffectiveTs="2013-11-18T01:04:25-05:00" StoreNumber="9735" SVSTypeCode="W" StatusCode="402" StatusDescription="Scheduled"></HDWCLineStatus>
+                </HDWCLineStatusList>
+            </HDWillCall>
+        </HDWillCallList>
+        <HDStorePaymentInfoList>
+            <HDStorePaymentInfo ExtnStore="9735" ExtnPaymentType="MA" ExtnPaymentIdentifier="1010000455954444" ExtnMaxStorePaymentLimit="18.35"></HDStorePaymentInfo>
+        </HDStorePaymentInfoList>
+    </Extn>
+    <Awards></Awards>
+    <OrderLines>
+        <OrderLine ShipNode="9735" OrderedQty="3" LineType="SL" IsFirmPredefinedNode="Y">
+            <Extn ExtnTransactionType="ADD_LINE" ExtnSystemReferenceTS="2013-11-18T01:01:00-05:00" ExtnSystemReference="WCS" ExtnSystemLocationReference="9735" ExtnSellingLocation="9735" ExtnSKUCode="610054" ExtnReleaseType="P" ExtnProductTypeCode="PRODUCT" ExtnPreferredPickupLocation="SD-001" ExtnOrderCreateLocationType="VIRTUAL" ExtnOrderCreateLocation="6905" ExtnOMSID="385970" ExtnInventoryTrackCode="TRACK" ExtnHostUserID="ONLINE" ExtnHostOrderLineReference="1001" ExtnWillCallLineNum="5001" ExtnCreateSrcProcess="9" ExtnModifySrcProcess="9" ExtnCreateSrcReference="-1" ExtnModifySrcReference="-1" ExtnHDUOMCode="80" ExtnHDUOMCodeDesc="EA">
+                <HDEventList>
+                    <HDEvent Store="6905" EventTs="2013-11-18T01:04:25-05:00" EventTrkCode="CO" MerQty="3" EventUserAuditID="ONLINE"></HDEvent>
+                </HDEventList>
+            </Extn>
+            <Item UnitCost="5.77" ProductClass="GOOD" ItemShortDesc="AcrylPro 1 qt. Ceram" ItemDesc="AcrylPro 1 qt. Ceram"></Item>
+            <LinePriceInfo UnitPrice="5.77" TaxableFlag="Y"></LinePriceInfo>
+            <LineCharges></LineCharges>
+            <LineTaxes>
+                <LineTax TaxName="Sales" Tax="1.04"></LineTax>
+            </LineTaxes>
+            <OrderDates>
+                <OrderDate ExpectedDate="2013-11-18T01:01:00-05:00" DateTypeId="PICKUPDATE"></OrderDate>
+            </OrderDates>
+            <PersonInfoShipTo ZipCode="30189" State="GA" MobilePhone="7705918663" LastName="WOODSTOCK" FirstName="WOODSTOCK" DayPhone="7705918663" Country="US" City="WOODSTOCK" AddressLine1="9037 HWY 92, SUITE 100"></PersonInfoShipTo>
+        </OrderLine>
+    </OrderLines>
+    <PersonInfoBillTo ZipCode="30014" State="GA" LastName="Robijnson" FirstName="Annal" EMailID="annal_robinson@homedepot.com" DayPhone="9894090330" Country="US" City="COVINGTON" AddressLine3="" AddressLine2="" AddressLine1="!,little strreet"></PersonInfoBillTo>
+    <PaymentMethods>
+        <PaymentMethod SvcNo="1010000455954444" PaymentType="MA" PaymentReference3="Annal" MaxChargeLimit="18.35" LastName="Annal" FirstName="Annal" DisplaySvcNo="4444" DisplayCreditCardNo="4444" CreditCardType="MA" CreditCardNo="1010000455954444" CreditCardName="MA" CreditCardExpDate="12/2022" CustomerPONo="none" ChargeType="CHARGE"></PaymentMethod>
+    </PaymentMethods>
+</Order>

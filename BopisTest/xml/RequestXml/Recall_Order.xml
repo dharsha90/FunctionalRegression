@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Order EnterpriseCode="HDUS" DocumentType="1" MaximumRecords="100">
+    <Extn ExtnHostOrderReference="" ExtnIncludeReleaseDetails="Y" ExtnIncludeInstructions="Y" ExtnIncludeAuditDetails="Y" ExtnIncludeAlertDetails="Y" ExtnPutOrderOnLock="Y" ExtnUserId="User1" ExtnIncludeEventDetails="Y" ExtnIncludeStatusDetails="Y" ExtnIncludeWorkOrderDetails="Y" ExtnIncludePurchaseOrderDetails="Y" ExtnIncludeReturnOrderDetails="Y"></Extn>
+</Order>

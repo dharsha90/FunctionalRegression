@@ -1,0 +1,1 @@
+-XX:MaxPermSize=256m -Xms512m -Xmx512m -Dvendor=shell -DvendorFile=C:/workspaces_3.7/workspace/CodeTesterUtility/vendor.properties

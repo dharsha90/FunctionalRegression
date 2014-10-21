@@ -1,0 +1,1 @@
+shell=C:/Sterling91/properties/noapp.properties

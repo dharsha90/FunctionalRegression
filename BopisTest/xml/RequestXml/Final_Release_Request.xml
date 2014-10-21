@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Shipment EnterpriseCode="HDUS" SellerOrganizationCode="9065" ShipNode="9735">
+    <Extn ExtnHostOrderReference="W999433002BBB_17" ExtnDerivedTransactionType="RELEASE" ExtnHostOrderSystemIdentifier="0"></Extn>
+    <ShipmentLines>
+        <ShipmentLine Quantity="3.0">
+            <Extn ExtnHostOrderLineReference="1001" ExtnTransactionType="RELEASE" ExtnSKUCode="610054" ExtnSVSRemEntriesReqd="N"></Extn>
+        </ShipmentLine>
+    </ShipmentLines>
+</Shipment>

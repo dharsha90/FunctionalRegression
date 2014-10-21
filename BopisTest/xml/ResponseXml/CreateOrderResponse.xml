@@ -1,0 +1,42 @@
+<Order DocumentType="0001" EnterpriseCode="HDUS" OrderDate="2013-11-18T01:01:00.140-05:00" SellerOrganizationCode="9065">
+<Instructions>
+  <Instruction InstructionText="ONLINE PICKUP" InstructionType="CustRef" SequenceNo="1" /> 
+  </Instructions>
+<Extn ExtnClientExternalOrderReference="" ExtnClientExternalSrcProcess="" ExtnCreateUserID="ONLINE" ExtnCustGoldenRecID="0202E824ABE4C41AAT" ExtnDerivedTransactionType="ORDER_CREATE" ExtnHostOrderReference="W999433002BBB_8" ExtnHostOrderSystemIdentifier="W999433002BBB_8" ExtnHostSrcProcess="9" ExtnHostUserID="ONLINE" ExtnIsMultiStoreOrder="N" ExtnLegacyHostSrcProcess="" ExtnModifiedUserID="ONLINE" ExtnUCMID="" ExtnUCMType="C">
+<HDWillCallList>
+<HDWillCall AltContactName="" ContactName="Annal Robijnson" CreateSrcProcess="9" CreateSrcReference="-1" CreateTimeStamp="2013-11-18T01:01:00.140-05:00" ModifySrcProcess="9" ModifySrcReference="-1" OrderCreateLocation="6905" SKUCode="515664" ScheduledPickUpTs="2013-11-18T01:01:00-05:00" SellingLocation="9735" ShipNode="9735" StatusCd="402" StatusDescription="Scheduled" StatusEffectiveTs="2013-11-18T01:01:00.140-05:00" Tax="" WillCallLineNum="5001" WillCallType="C">
+<HDWCLineStatusList>
+  <HDWCLineStatus SVSTypeCode="W" StatusCode="100" StatusDescription="Quote" StatusEffectiveTs="2013-11-18T01:04:25-05:00" StoreNumber="9735" UserAuditID="SYSCOM" /> 
+  <HDWCLineStatus SVSTypeCode="W" StatusCode="402" StatusDescription="Scheduled" StatusEffectiveTs="2013-11-18T01:04:25-05:00" StoreNumber="9735" UserAuditID="SYSCOM" /> 
+  </HDWCLineStatusList>
+  </HDWillCall>
+  </HDWillCallList>
+<HDStorePaymentInfoList>
+  <HDStorePaymentInfo ExtnMaxStorePaymentLimit="18.35" ExtnPaymentIdentifier="1010000455954444" ExtnPaymentType="MA" ExtnStore="9735" /> 
+  </HDStorePaymentInfoList>
+  </Extn>
+  <Awards /> 
+<OrderLines>
+<OrderLine IsFirmPredefinedNode="Y" LineType="SL" OrderedQty="3" ShipNode="9735">
+<Extn ExtnCreateSrcProcess="9" ExtnCreateSrcReference="-1" ExtnHDUOMCode="80" ExtnHDUOMCodeDesc="EA" ExtnHostOrderLineReference="1001" ExtnHostUserID="ONLINE" ExtnInventoryTrackCode="TRACK" ExtnModifySrcProcess="9" ExtnModifySrcReference="-1" ExtnOMSID="385970" ExtnOrderCreateLocation="6905" ExtnOrderCreateLocationType="VIRTUAL" ExtnPreferredPickupLocation="SD-001" ExtnProductTypeCode="PRODUCT" ExtnReleaseType="P" ExtnSKUCode="610054" ExtnSellingLocation="9735" ExtnSystemLocationReference="9735" ExtnSystemReference="WCS" ExtnSystemReferenceTS="2013-11-18T01:01:00-05:00" ExtnTransactionType="ADD_LINE" ExtnWillCallLineNum="5001">
+<HDEventList>
+  <HDEvent EventTrkCode="CO" EventTs="2013-11-18T01:04:25-05:00" EventUserAuditID="ONLINE" MerQty="3" Store="6905" /> 
+  </HDEventList>
+  </Extn>
+  <Item ItemDesc="AcrylPro 1 qt. Ceram" ItemShortDesc="AcrylPro 1 qt. Ceram" ProductClass="GOOD" UnitCost="5.77" /> 
+  <LinePriceInfo TaxableFlag="Y" UnitPrice="5.77" /> 
+  <LineCharges /> 
+<LineTaxes>
+  <LineTax Tax="1.04" TaxName="Sales" /> 
+  </LineTaxes>
+<OrderDates>
+  <OrderDate DateTypeId="PICKUPDATE" ExpectedDate="2013-11-18T01:01:00-05:00" /> 
+  </OrderDates>
+  <PersonInfoShipTo AddressLine1="9037 HWY 92, SUITE 100" City="WOODSTOCK" Country="US" DayPhone="7705918663" FirstName="WOODSTOCK" LastName="WOODSTOCK" MobilePhone="7705918663" State="GA" ZipCode="30189" /> 
+  </OrderLine>
+  </OrderLines>
+  <PersonInfoBillTo AddressLine1="!,little strreet" AddressLine2="" AddressLine3="" City="COVINGTON" Country="US" DayPhone="9894090330" EMailID="annal_robinson@homedepot.com" FirstName="Annal" LastName="Robijnson" State="GA" ZipCode="30014" /> 
+<PaymentMethods>
+  <PaymentMethod ChargeType="CHARGE" CreditCardExpDate="12/2022" CreditCardName="MA" CreditCardNo="1010000455954444" CreditCardType="MA" CustomerPONo="none" DisplayCreditCardNo="4444" DisplaySvcNo="4444" FirstName="Annal" LastName="Annal" MaxChargeLimit="18.35" PaymentReference3="Annal" PaymentType="MA" SvcNo="1010000455954444" /> 
+  </PaymentMethods>
+  </Order>
