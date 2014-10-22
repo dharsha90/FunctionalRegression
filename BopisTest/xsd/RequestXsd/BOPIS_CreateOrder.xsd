@@ -293,7 +293,7 @@
       <xs:attribute type="xs:short" name="SellerOrganizationCode"/>
       <xs:attribute type="xs:dateTime" name="OrderDate"/>
       <xs:attribute type="xs:string" name="EnterpriseCode"/>
-      <xs:attribute type="xs:byte" name="DocumentType"/>
+      <xs:attribute type="xs:string" name="DocumentType"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>

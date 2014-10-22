@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Order SellerOrganizationCode="9065" OrderDate="2013-11-18T01:01:00.140-05:00" EnterpriseCode="HDUS" DocumentType="1">
+<Order SellerOrganizationCode="9065" OrderDate="2013-11-18T01:01:00.140-05:00" EnterpriseCode="HDUS" DocumentType="0001">
     <Instructions>
         <Instruction InstructionType="CustRef" InstructionText="ONLINE PICKUP"></Instruction>
     </Instructions>
-    <Extn ExtnUCMID="" ExtnIsMultiStoreOrder="N" ExtnHostOrderSystemIdentifier="" ExtnHostOrderReference="" ExtnDerivedTransactionType="ORDER_CREATE" ExtnHostSrcProcess="9" ExtnLegacyHostSrcProcess="" ExtnClientExternalSrcProcess="" ExtnClientExternalOrderReference="" ExtnCreateUserID="ONLINE" ExtnHostUserID="ONLINE" ExtnModifiedUserID="ONLINE" ExtnCustGoldenRecID="0202E824ABE4C41AAT" ExtnUCMType="C">
+    <Extn ExtnUCMID="" ExtnIsMultiStoreOrder="N" ExtnHostOrderSystemIdentifier="129083" ExtnHostOrderReference="129083" ExtnDerivedTransactionType="ORDER_CREATE" ExtnHostSrcProcess="9" ExtnLegacyHostSrcProcess="" ExtnClientExternalSrcProcess="" ExtnClientExternalOrderReference="" ExtnCreateUserID="ONLINE" ExtnHostUserID="ONLINE" ExtnModifiedUserID="ONLINE" ExtnCustGoldenRecID="0202E824ABE4C41AAT" ExtnUCMType="C">
         <HDWillCallList>
             <HDWillCall CreateSrcProcess="9" ModifySrcProcess="9" CreateSrcReference="-1" ModifySrcReference="-1" SKUCode="515664" StatusCd="402" StatusDescription="Scheduled" CreateTimeStamp="2013-11-18T01:01:00.140-05:00" StatusEffectiveTs="2013-11-18T01:01:00.140-05:00" OrderCreateLocation="6905" WillCallLineNum="5001" ScheduledPickUpTs="2013-11-18T01:01:00-05:00" WillCallType="C" Tax="" SellingLocation="9735" ShipNode="9735" ContactName="Annal Robijnson" AltContactName=" ">
                 <HDWCLineStatusList>

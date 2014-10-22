@@ -1,6 +1,7 @@
 package com.Thd.Bopis;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -8,25 +9,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Scanner;
 
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-
-
 import org.xml.sax.SAXException;
 
-import src.CodeTester;
-
-import com.Thd.Regression.DbConnection;
 import com.Thd.Regression.ServletCaller;
 import com.Thd.Regression.SetUpInputXml;
 
 public class BopisTest {
 	
-	static String ReadData = "";
+	String ReadData = "";
 	static Connection con = null;
 	static String BOPISInputXMLPath, BOPISOutputXMLPath,BOPISInputXSDPath, BOPISOutputXSDPath,
 			hostOrderRefInput = "", hostOrderRefOutput = "",
@@ -38,22 +33,29 @@ public class BopisTest {
 
 	@BeforeClass
 	public static void setUpBopisTest() throws IOException, SQLException {
+		System.out.println("Enter HostOrderReference Number ");
+		Scanner in = new Scanner(System.in);
+		hostOrderRefInput = in.next();
+		
+		if (hostOrderRefInput==null) hostOrderRefInput="R" + System.currentTimeMillis();
+		
 		Property= new Properties();
 		Property.load(BopisTest.class.getResourceAsStream("/config.properties"));
 		BOPISInputXMLPath = Property.getProperty("BOPIS_Input_XML_Folder");
 		BOPISOutputXMLPath = Property.getProperty("BOPIS_Output_XML_Folder");
 		BOPISInputXSDPath= Property.getProperty("BOPIS_Input_XSD_Folder");
 		BOPISOutputXSDPath= Property.getProperty("BOPIS_Output_XSD_Folder");
-		con = DbConnection.getDBConnection();
+		//con = DbConnection.getDBConnection();
 
 	}
 
-	@Before
+	@Test
 	public void setUpCreateOrderTest() throws IOException, SQLException, SAXException, InterruptedException {
-		ReadData = SetUpInputXml.setCreateOrderInputXml("");//input given by user
-		CodeTester.callAPI("HDProcessTransaction", BOPISInputXMLPath+"BOPIS_CreateOrder.xml", BOPISOutputXMLPath+"CreateOrderResponse.xml", true);
-		Thread.sleep(5000);
-		stmt = con.prepareStatement("select order_header_key,order_no,extn_host_order_ref from yfs_order_header where extn_host_order_ref=? and DOCUMENT_TYPE='0001'");
+		ReadData = SetUpInputXml.setCreateOrderInputXml(hostOrderRefInput);//input given by user
+		String apiResult = CodeTester.callAPI("HDProcessTransaction", ReadData, BOPISOutputXMLPath+"CreateOrderResponse.xml", false);
+		//Thread.sleep(5000);
+		System.out.println("First api result is " + apiResult);
+		/*stmt = con.prepareStatement("select order_header_key,order_no,extn_host_order_ref from yfs_order_header where extn_host_order_ref=? and DOCUMENT_TYPE='0001'");
 		stmt.setString(1, hostOrderRefInput);
 		rs = stmt.executeQuery();
 		if (rs.next()) {
@@ -71,17 +73,16 @@ public class BopisTest {
 			if (status_Description.equals("Included In Shipment")) {
 				break;
 			}
-
-		}
+		}*/
 	}
 
 	@Test
 	public void testCreateOrder() {
-		assertEquals(status_Description, "included in shpiment");
+		assertEquals(status_Description.toLowerCase(), "included in shipment");
 		assertEquals(hostOrderRefOutput, hostOrderRefInput);
 	}
 
-	@Before
+	@Test
 	public void setUpHDRecallTest() throws IOException, SQLException, SAXException {
 		ReadData = SetUpInputXml.setRecallInputXml();
 		CodeTester.callAPI("HDRecall", BOPISInputXMLPath+"Recall_Order.xml", BOPISOutputXMLPath+"Recall_Order_Response.xml", true);
@@ -97,16 +98,18 @@ public class BopisTest {
 
 		}
 	}
+	
+	//revisit lock id (remove)
 
 	@Test
 	public void testHDRecall() {
-		assertEquals(extnLockID, extnLockID);
-
+		//assertEquals(extnLockID, extnLockID);
+		assertNotNull(extnLockID);
 	}
 
-	@Before
+	@Test
 	public void setUpPickConfirmationTest() throws IOException, SQLException, SAXException {
-		ReadData = SetUpInputXml.setPickInputXml("");
+		ReadData = SetUpInputXml.setPickInputXml(orderNo);
 		CodeTester.callAPI("HDPickConfirmation", BOPISInputXMLPath+"PICK_Request.xml", BOPISOutputXMLPath+"PICK_Response.xml", true);
 		hostOrderRefInput = ServletCaller.getExtnHostOrderref("ExtnHostOrderReference=");
 		stmt = con.prepareStatement("select Description from yfs_status where status=(select status from yfs_order_release_status where status=? and order_header_key=?)");
@@ -124,11 +127,11 @@ public class BopisTest {
 
 	@Test
 	public void testPickConfirmation() {
-		assertEquals(extnLockID, extnLockID);
-
+		//assertEquals(extnLockID, extnLockID);
+		assertEquals(status_Description.toLowerCase(),"shipment picked");
 	}
 
-	@Before
+	@Test
 	public void setUpReleaseOrderTest() throws IOException, SQLException, SAXException {
 		ReadData = SetUpInputXml.setReleaseInputXml();
 		CodeTester.callAPI("HDProcessTransaction", BOPISInputXMLPath+"Final_Release_Request.xml", BOPISOutputXMLPath+"Final_Release_Response.xml", true);
@@ -147,10 +150,10 @@ public class BopisTest {
 
 	@Test
 	public void testReleaseOrder() {
-		assertEquals(status_Description, "");
+		assertEquals(status_Description.toLowerCase(), "shipped");
 	}
 
-	@Before
+	@Test
 	public void setUpPurgeOrderTest() throws IOException, SQLException {
 		stmt = con.prepareStatement("select TRANSACTION_KEY from yfs_task_q where data_key=?");
 		stmt.setString(1, orderHeaderKey);
@@ -167,7 +170,7 @@ public class BopisTest {
 	}
 
 	@AfterClass
-	public void closeBopisTest() throws SQLException {
+	public static void closeBopisTest() throws SQLException {
 		con.close();
 	}
 

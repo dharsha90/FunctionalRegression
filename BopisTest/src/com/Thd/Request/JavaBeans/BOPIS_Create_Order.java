@@ -414,7 +414,7 @@ public class BOPIS_Create_Order {
     @XmlAttribute(name = "EnterpriseCode")
     protected String enterpriseCode;
     @XmlAttribute(name = "DocumentType")
-    protected Byte documentType;
+    protected String documentType;
 
     /**
      * Gets the value of the instructions property.
@@ -640,7 +640,7 @@ public class BOPIS_Create_Order {
      *     {@link Byte }
      *     
      */
-    public Byte getDocumentType() {
+    public String getDocumentType() {
         return documentType;
     }
 
@@ -652,7 +652,7 @@ public class BOPIS_Create_Order {
      *     {@link Byte }
      *     
      */
-    public void setDocumentType(Byte value) {
+    public void setDocumentType(String value) {
         this.documentType = value;
     }
 

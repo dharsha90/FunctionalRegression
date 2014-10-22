@@ -25,8 +25,7 @@ public class SetUpInputXml {
 		xmlWriter.setFormatOutput(true);
 		// rco.setEnterpriseCode("DEFAULT");
 		xmlWriter.writeXMLData(bco, source);
-		ReadData = ServletCaller.convertXmlToString("xml//RequestXml//BOPIS_CreateOrder.xml");
-		return ReadData;
+		return ServletCaller.convertXmlToString(source.toString());
 	}
 
 	public static String setRecallInputXml() throws IOException {

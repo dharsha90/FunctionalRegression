@@ -12,7 +12,7 @@ public class DbConnection {
 	private static String DB_DRIVER,DB_CONNECTION_URL,DB_USER,DB_PASSWORD;
 	private static Connection dbConnection=null;
 	public static Connection getDBConnection() throws IOException
-	{
+	{/*
 		Properties DBProperty = new Properties();
 		DBProperty.load(DbConnection.class.getResourceAsStream("/config.properties"));
 		DB_DRIVER = DBProperty.getProperty("DB_Driver");
@@ -28,7 +28,7 @@ public class DbConnection {
 			} catch (ClassNotFoundException e) {
 				System.out.println(e.getMessage());
 			}
-		}
+		}*/
 		return dbConnection;
 		
 	}

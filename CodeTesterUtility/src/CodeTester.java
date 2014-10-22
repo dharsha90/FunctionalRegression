@@ -27,7 +27,9 @@ public class CodeTester {
 
 	static {
 		try {
-			CodeTester.api = YIFClientFactory.getInstance().getApi("LOCAL");
+			System.setProperty("vendor", "shell");
+			System.setProperty("vendorFile", "C:\\Sterling91\\Foundation\\properties\\vendor.properties");
+			CodeTester.api = YIFClientFactory.getInstance().getApi();//.getApi("LOCAL");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
