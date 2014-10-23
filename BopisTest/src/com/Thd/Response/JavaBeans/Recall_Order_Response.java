@@ -4038,7 +4038,7 @@ public class Recall_Order_Response {
         @XmlAttribute(name = "Createuserid")
         protected String createuserid;
         @XmlAttribute(name = "DocumentType")
-        protected Byte documentType;
+        protected String documentType;
         @XmlAttribute(name = "DraftOrderFlag")
         protected String draftOrderFlag;
         @XmlAttribute(name = "EnterpriseCode")
@@ -4453,7 +4453,7 @@ public class Recall_Order_Response {
          *     {@link Byte }
          *     
          */
-        public Byte getDocumentType() {
+        public String getDocumentType() {
             return documentType;
         }
 
@@ -4465,7 +4465,7 @@ public class Recall_Order_Response {
          *     {@link Byte }
          *     
          */
-        public void setDocumentType(Byte value) {
+        public void setDocumentType(String value) {
             this.documentType = value;
         }
 
@@ -24494,7 +24494,7 @@ public class Recall_Order_Response {
             @XmlAttribute(name = "ShipNode")
             protected Short shipNode;
             @XmlAttribute(name = "ShipmentNo")
-            protected Integer shipmentNo;
+            protected String shipmentNo;
             @XmlAttribute(name = "Status")
             protected Float status;
 
@@ -24626,7 +24626,7 @@ public class Recall_Order_Response {
              *     {@link Integer }
              *     
              */
-            public Integer getShipmentNo() {
+            public String getShipmentNo() {
                 return shipmentNo;
             }
 
@@ -24638,7 +24638,7 @@ public class Recall_Order_Response {
              *     {@link Integer }
              *     
              */
-            public void setShipmentNo(Integer value) {
+            public void setShipmentNo(String value) {
                 this.shipmentNo = value;
             }
 

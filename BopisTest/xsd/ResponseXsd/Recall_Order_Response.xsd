@@ -937,7 +937,7 @@
               </xs:element>
             </xs:sequence>
             <xs:attribute type="xs:string" name="Createuserid"/>
-            <xs:attribute type="xs:byte" name="DocumentType"/>
+            <xs:attribute type="xs:string" name="DocumentType"/>
             <xs:attribute type="xs:string" name="DraftOrderFlag"/>
             <xs:attribute type="xs:string" name="EnterpriseCode"/>
             <xs:attribute type="xs:short" name="MaxOrderStatus"/>
@@ -983,7 +983,7 @@
                   <xs:attribute type="xs:dateTime" name="Modifyts"/>
                   <xs:attribute type="xs:short" name="SellerOrganizationCode"/>
                   <xs:attribute type="xs:short" name="ShipNode"/>
-                  <xs:attribute type="xs:int" name="ShipmentNo"/>
+                  <xs:attribute type="xs:string" name="ShipmentNo"/>
                   <xs:attribute type="xs:float" name="Status"/>
                 </xs:complexType>
               </xs:element>

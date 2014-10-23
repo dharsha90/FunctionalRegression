@@ -434,7 +434,7 @@ public class Pick_Confirmation {
         @XmlAttribute(name = "ShipNode")
         protected Short shipNode;
         @XmlAttribute(name = "ShipmentNo")
-        protected Integer shipmentNo;
+        protected String shipmentNo;
 
         /**
          * Gets the value of the shipmentLines property.
@@ -588,7 +588,7 @@ public class Pick_Confirmation {
          *     {@link Integer }
          *     
          */
-        public Integer getShipmentNo() {
+        public String getShipmentNo() {
             return shipmentNo;
         }
 
@@ -600,7 +600,7 @@ public class Pick_Confirmation {
          *     {@link Integer }
          *     
          */
-        public void setShipmentNo(Integer value) {
+        public void setShipmentNo(String value) {
             this.shipmentNo = value;
         }
 

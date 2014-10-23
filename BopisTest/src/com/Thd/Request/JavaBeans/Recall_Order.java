@@ -70,7 +70,7 @@ public class Recall_Order {
     @XmlAttribute(name = "EnterpriseCode")
     protected String enterpriseCode;
     @XmlAttribute(name = "DocumentType")
-    protected Byte documentType;
+    protected String documentType;
     @XmlAttribute(name = "MaximumRecords")
     protected Byte maximumRecords;
 
@@ -130,7 +130,7 @@ public class Recall_Order {
      *     {@link Byte }
      *     
      */
-    public Byte getDocumentType() {
+    public String getDocumentType() {
         return documentType;
     }
 
@@ -142,7 +142,7 @@ public class Recall_Order {
      *     {@link Byte }
      *     
      */
-    public void setDocumentType(Byte value) {
+    public void setDocumentType(String value) {
         this.documentType = value;
     }
 

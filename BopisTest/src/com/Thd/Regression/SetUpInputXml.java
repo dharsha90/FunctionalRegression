@@ -25,10 +25,10 @@ public class SetUpInputXml {
 		xmlWriter.setFormatOutput(true);
 		// rco.setEnterpriseCode("DEFAULT");
 		xmlWriter.writeXMLData(bco, source);
-		return ServletCaller.convertXmlToString(source.toString());
+		return CommonUtils.convertXmlToString(source.toString());
 	}
 
-	public static String setRecallInputXml() throws IOException {
+	public static String setRecallInputXml(String lockOrder) throws IOException {
 		XMLReader<com.Thd.Request.JavaBeans.BOPIS_Create_Order> xmlReader = new XMLReader<BOPIS_Create_Order>(
 				com.Thd.Request.JavaBeans.BOPIS_Create_Order.class);
 		xmlReader.addValidatingSchema(new File(
@@ -43,12 +43,13 @@ public class SetUpInputXml {
 		Recall_Order rco = xmlReader1.readXMLData(destination);
 		rco.getExtn().setExtnHostOrderReference(
 				bco.getExtn().getExtnHostOrderReference());
+		rco.getExtn().setExtnPutOrderOnLock("N");
 		XMLWriter<com.Thd.Request.JavaBeans.Recall_Order> xmlWriter = new XMLWriter<Recall_Order>(
 				com.Thd.Request.JavaBeans.Recall_Order.class);
 		xmlWriter.setFormatOutput(true);
 		// rco.setEnterpriseCode("DEFAULT");
 		xmlWriter.writeXMLData(rco, destination);
-		ReadData = ServletCaller
+		ReadData = CommonUtils
 				.convertXmlToString("xml//RequestXml//Recall_Order.xml");
 		return ReadData;
 	}
@@ -81,7 +82,7 @@ public class SetUpInputXml {
 				com.Thd.Request.JavaBeans.Pick_Confirmation.class);
 		xmlWriter.setFormatOutput(true);
 		xmlWriter.writeXMLData(pco, destination);
-		ReadData = ServletCaller
+		ReadData = CommonUtils
 				.convertXmlToString("xml//RequestXml//PICK_Request.xml");
 		return ReadData;
 	}
@@ -105,15 +106,24 @@ public class SetUpInputXml {
 				com.Thd.Request.JavaBeans.Final_Release_Request.class);
 		xmlWriter.setFormatOutput(true);
 		xmlWriter.writeXMLData(frr, destination);
-		ReadData = ServletCaller
+		ReadData = CommonUtils
 				.convertXmlToString("xml//RequestXml//Final_Release_Request.xml");
 		return ReadData;
 
 	}
-
+	public static Recall_Order_Response readHDRecall(){
+		XMLReader<com.Thd.Response.JavaBeans.Recall_Order_Response> xmlReader = new XMLReader<Recall_Order_Response>(
+				com.Thd.Response.JavaBeans.Recall_Order_Response.class);
+		xmlReader.addValidatingSchema(new File(
+				"xsd//ResponseXsd//Recall_Order_Response.xsd"));
+		File source = new File("xml//ResponseXml//Recall_Order_Response.xml");
+		return xmlReader.readXMLData(source); 
+	}
+	
+	
 	public static void main(String[] args) throws IOException {
 		setCreateOrderInputXml("");
-		setRecallInputXml();
+		setRecallInputXml("N");
 		setPickInputXml("");
 		setReleaseInputXml();
 	}

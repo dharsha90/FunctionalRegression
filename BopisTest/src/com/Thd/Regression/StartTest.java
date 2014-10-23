@@ -10,7 +10,7 @@ public class StartTest {
 	static String ReadData = "";
 
 	public static void main(String[] args) throws IOException {
-		ServletCaller.loadProperties();
+		CommonUtils.loadProperties();
 		
 		Result bopisResult = JUnitCore.runClasses(com.Thd.Bopis.BopisTest.class);
 		for (Failure failure : bopisResult.getFailures()) {

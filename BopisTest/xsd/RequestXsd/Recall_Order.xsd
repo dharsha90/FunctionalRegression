@@ -24,7 +24,7 @@
         </xs:element>
       </xs:sequence>
       <xs:attribute type="xs:string" name="EnterpriseCode"/>
-      <xs:attribute type="xs:byte" name="DocumentType"/>
+      <xs:attribute type="xs:string" name="DocumentType"/>
       <xs:attribute type="xs:byte" name="MaximumRecords"/>
     </xs:complexType>
   </xs:element>
