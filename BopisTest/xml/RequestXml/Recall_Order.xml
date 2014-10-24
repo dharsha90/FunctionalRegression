@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Order EnterpriseCode="HDUS" DocumentType="0001" MaximumRecords="100">
-    <Extn ExtnHostOrderReference="asfdf123" ExtnIncludeReleaseDetails="Y" ExtnIncludeInstructions="Y" ExtnIncludeAuditDetails="Y" ExtnIncludeAlertDetails="Y" ExtnPutOrderOnLock="N" ExtnUserId="User1" ExtnIncludeEventDetails="Y" ExtnIncludeStatusDetails="Y" ExtnIncludeWorkOrderDetails="Y" ExtnIncludePurchaseOrderDetails="Y" ExtnIncludeReturnOrderDetails="Y"></Extn>
-</Order>
